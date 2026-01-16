@@ -1,10 +1,9 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://github.com/fastlane/fastlane/archive/refs/tags/2.230.0.tar.gz"
-  sha256 "e496600b49a3eda2463964eedcfdb4d0c25751cf2a1fa59de9f09719d249ed06"
+  url "https://github.com/fastlane/fastlane/archive/refs/tags/2.231.0.tar.gz"
+  sha256 "1357db856bd1791a2b3463f1fd251fe2c41f20b6aca38e9510e615880679b5c0"
   license "MIT"
-  revision 1
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -29,13 +28,6 @@ class Fastlane < Formula
 
   def fastlane_gem_home
     "${HOME}/.local/share/fastlane/#{Formula["ruby"].version.major_minor}.0"
-  end
-
-  # Include gems that are no longer part of the standard library in Ruby 4.0+
-  # Upstream PR ref: https://github.com/fastlane/fastlane/pull/29833
-  patch do
-    url "https://github.com/fastlane/fastlane/commit/104113ad1d16ad44cf4a74e60993ba44cef2d787.patch?full_index=1"
-    sha256 "ccf3358fca5e43a20fe89f114a5234efe1e8c897c384d9db7a0d13d9c3c3edfb"
   end
 
   def install
